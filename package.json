@@ -6,7 +6,7 @@
   "scripts": {
     "test": "docker-compose -f docker-tests/docker-compose.yml up --build --abort-on-container-exit",
     "jest": "jest",
-    "coverage": "jest --collectCoverage",
+    "coverage": "jest --collectCoverage --detectOpenHandles",
     "start": "NODE_PATH=build node build/index.js",
     "build": "tsc"
   },
