@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  mysql_db:
+    image: mysql:8.0
+    restart: always
+    build:
+      context: ..
+      dockerfile: docker-tests/Dockerfile.mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: shoping_cart_test
+    volumes:
+      - mysql-db-data:/var/lib/mysql
+  tests:
+    build:
+      context: ..
+      dockerfile: docker-tests/Dockerfile
+    depends_on:
+      - mysql_db
+
+volumes:
+  mysql-db-data:
