@@ -6,6 +6,7 @@ module.exports = {
   modulePaths: [],
   moduleNameMapper: {
     '^application/(.*)': '<rootDir>/src/application/$1',
+    '^components/(.*)': '<rootDir>/src/components/$1',
     '^config(.*)': '<rootDir>/src/config$1',
   },
   collectCoverage: false,

@@ -1,4 +1,5 @@
 import Knex from 'knex'
+import { getMaxListeners } from 'process'
 import User from './User'
 
 export default class UsersRepository {
@@ -9,4 +10,12 @@ export default class UsersRepository {
     const created = await this.knex('users').where({ userId: insertedId }).first()
     return created
   }
+
+  async getUserById(userId: number): Promise<User> {
+    const user = await this.knex('users').where({ userId }).first()
+    return user
+  }
+
+
+
 }
