@@ -6,7 +6,8 @@ module.exports = {
   modulePaths: [],
   moduleNameMapper: {
     '^application/(.*)': '<rootDir>/src/application/$1',
-    '^components/(.*)': '<rootDir>/src/components/$1',
+    '^modules/(.*)': '<rootDir>/src/modules/$1',
+    '^middlewares/(.*)': '<rootDir>/src/middlewares/$1',
     '^db/(.*)': '<rootDir>/src/db/$1',
     '^config(.*)': '<rootDir>/src/config$1',
   },

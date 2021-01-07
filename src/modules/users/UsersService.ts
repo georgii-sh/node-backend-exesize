@@ -1,11 +1,8 @@
 import User from './User';
-import UsersRepository from './UsersRepository';
+import { createUser } from './UsersRepository';
 
 export default class UsersService {
-  constructor(private readonly usersRepository: UsersRepository) {}
-
-  async createUser(user: any): Promise<User> {
-    const creater = await this.usersRepository.createUser(user)
-    return creater
+  async createUser(user: { email: string; name: string }): Promise<User> {
+    return await createUser(user)
   }
 }
