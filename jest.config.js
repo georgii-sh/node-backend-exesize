@@ -7,6 +7,7 @@ module.exports = {
   moduleNameMapper: {
     '^application/(.*)': '<rootDir>/src/application/$1',
     '^components/(.*)': '<rootDir>/src/components/$1',
+    '^db/(.*)': '<rootDir>/src/db/$1',
     '^config(.*)': '<rootDir>/src/config$1',
   },
   collectCoverage: false,

@@ -1,5 +1,5 @@
-import User from "./User";
-import UsersRepository from "./UsersRepository";
+import User from './User';
+import UsersRepository from './UsersRepository';
 
 export default class UsersService {
   constructor(private readonly usersRepository: UsersRepository) {}
