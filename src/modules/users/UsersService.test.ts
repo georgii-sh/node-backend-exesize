@@ -17,7 +17,7 @@ describe('Users service', () => {
     })
 
     it('should check ifEmailBlacklisted before create', async () => {
-      ifEmailBlacklisted.mockImplementation(() => true)
+      ;(ifEmailBlacklisted as jest.Mock).mockImplementation(() => true)
       try {
         await UsersService.createUser({ email: 'test@email.com', name: 'Testt Name' })
       } catch (e) {}
@@ -25,7 +25,7 @@ describe('Users service', () => {
     })
 
     it('should not call create user if email blacklisted', async () => {
-      ifEmailBlacklisted.mockImplementation(() => true)
+      ;(ifEmailBlacklisted as jest.Mock).mockImplementation(() => true)
       try {
         await UsersService.createUser({ email: 'test@email.com', name: 'Testt Name' })
       } catch (e) {}
