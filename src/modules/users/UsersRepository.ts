@@ -11,3 +11,9 @@ export async function getUserById(userId: number): Promise<User> {
   const user = await knex('users').where({ userId }).first()
   return user
 }
+
+export async function assingVehicleToUser(userId: number, vehicleId: number): Promise<any> {
+  const insertedId = await knex('usersVehicles').insert({ userId, vehicleId }).into('usersVehicles')
+  const created = await knex('usersVehicles').where({ userId: insertedId }).first()
+  return created
+}

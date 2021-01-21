@@ -6,7 +6,7 @@ export async function seed(knex: Knex): Promise<void> {
 
   // Inserts seed entries
   await knex('vehicles').insert([
-    { vehiclesId: 1, modelName: 'Honda CRV', plateNumber: '1111' },
-    { vehiclesId: 2, modelName: 'Toyota Camry', plateNumber: '2222' },
+    { vehicleId: 1, modelName: 'Honda CRV', plateNumber: '1111' },
+    { vehicleId: 2, modelName: 'Toyota Camry', plateNumber: '2222' },
   ])
 }
